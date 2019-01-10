@@ -28,16 +28,16 @@ defmodule AntFarm.HelloWorld do
     raw_e2 = error(o2)
     e2 = Utils.randomize_frequency(raw_e2, 0.0345)
 
-    if rem(round, 100) == 0 do
+    if rem(round, 1000) == 0 do
       IO.inspect({o1, raw_e1, e1}, label: "a round #{round}")
       IO.inspect({o2, raw_e2, e2}, label: "b round #{round}")
     end
 
     cond do
-      raw_e1 <= 0.04 ->
+      raw_e1 <= 0.0 ->
         {:ok, o1}
 
-      raw_e2 <= 0.04 ->
+      raw_e2 <= 0.0 ->
         {:ok, o2}
 
       e1 >= e2 ->
